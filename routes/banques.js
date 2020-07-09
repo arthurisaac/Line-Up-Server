@@ -51,8 +51,8 @@ router.get('/', function (req, res) {
                     'url': 'https://obscure-refuge-04005.herokuapp.com/',
                     'distance': 0,
                     "coord": {
-                        "lng": -1.518119,
-                        "lat": 12.364098
+                        "lng": -1.5069991,
+                        "lat": 12.3688177
                     }
                 },
                 {
@@ -70,14 +70,14 @@ router.get('/', function (req, res) {
                     'distance': 0,
                     "coord": {
                         "lng": -1.518119,
-                        "lat": 12.364098
+                        "lat": 12.364018
                     }
                 }
             ]
         },
         {
             'nom': 'CORIS BANK',
-            'photoURL': 'cbi.png',
+            'photoURL': 'cbi.svg',
             'agence': []
         }
     ];
