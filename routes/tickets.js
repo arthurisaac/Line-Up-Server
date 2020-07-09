@@ -190,11 +190,16 @@ router.post('/save-ticket', function (req, res) {
     const picked = req.body.picked;
     const user = req.body.user;
 
-    const query = `INSERT INTO user_ticket (agence, service, url, photoURL, code, ticket, idTK, expire, picked, user)  VALUES ("${agence}", "${service}", "${url}", "${photoURL}", "${code}", "${ticket}", '${idTK}', "${expire}", "${picked}", ${user})`;
-    db.query(query, (err, result) => {
-        if (err) throw err;
-        res.end(JSON.stringify(result));
-    })
+    if (user !== undefined) {
+        const query = `INSERT INTO user_ticket (agence, service, url, photoURL, code, ticket, idTK, expire, picked, user)  VALUES ("${agence}", "${service}", "${url}", "${photoURL}", "${code}", "${ticket}", '${idTK}', "${expire}", "${picked}", ${user})`;
+        db.query(query, (err, result) => {
+            if (err) throw err;
+            res.end(JSON.stringify(result));
+        })
+    } else {
+        res.statusCode = 503;
+        res.end(JSON.stringify({error: 'Not authorized'}));
+    }
 });
 
 router.post('/my-tickets', function (req, res) {
