@@ -99,6 +99,22 @@ router.get('/', function (req, res) {
                 }
             ]
         },
+        {
+            'nom': 'BANQUE AGRICOLE DU FASO',
+            'photoURL': 'badf.jpg',
+            'agence': [
+                
+                {
+                    'nom': 'Siège',
+                    'url': 'https://obscure-refuge-04005.herokuapp.com/',
+                    'distance': 0,
+                    "coord": {
+                        "lng": -1.5235698,
+                        "lat": 12.3708036
+                    }
+                }
+            ]
+        },
     ];
     res.end(JSON.stringify(banques));
 });
