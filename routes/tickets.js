@@ -204,7 +204,7 @@ router.post('/save-ticket', function (req, res) {
 
 router.post('/my-tickets', function (req, res) {
     const user = req.body.user;
-    const query = `SELECT * FROM user_ticket WHERE user = ${user} AND ticket IS NOT NULL ORDER BY id DESC`;
+    const query = `SELECT * FROM user_ticket WHERE user = ${user} AND ticket IS NOT NULL AND DATE_ADD(ticket.created_at, INTERVAL 1 DAY) > NOW() ORDER BY id DESC`;
     db.query(query, (err, result) => {
         if (err) throw err;
         res.end(JSON.stringify(result));
