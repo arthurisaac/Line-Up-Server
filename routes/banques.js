@@ -84,22 +84,39 @@ router.get('/', function (req, res) {
     */
     const banques = [
         {
-            'nom': 'ECOBANK',
-            'photoURL': 'ecobank.png',
+            'nom': 'CORIS BANK',
+            'photoURL': 'cbi.svg',
             'agence': [
-                
                 {
                     'nom': 'Agence 1200 logements',
                     'url': 'https://obscure-refuge-04005.herokuapp.com/',
                     'distance': 0,
                     "coord": {
-                        "lng": -1.5069991,
-                        "lat": 12.3688177
+                        "lng": -1.494743464140587,
+                        "lat": 12.37207848374783
+                    }
+                },
+                {
+                    'nom': 'Agence Koulouba',
+                    'url': 'https://obscure-refuge-04005.herokuapp.com/',
+                    'distance': 0,
+                    "coord": {
+                        "lng": -1.5186043942323852,
+                        "lat": 12.369898701622269,
+                    }
+                },
+                {
+                    'nom': 'Agence ZAD',
+                    'url': 'https://obscure-refuge-04005.herokuapp.com/',
+                    'distance': 0,
+                    "coord": {
+                        "lng": -1.5081330508108046,
+                        "lat": 12.339882930496627
                     }
                 }
             ]
         },
-        {
+        /*{
             'nom': 'BANQUE AGRICOLE DU FASO',
             'photoURL': 'badf.jpg',
             'agence': [
@@ -114,7 +131,7 @@ router.get('/', function (req, res) {
                     }
                 }
             ]
-        },
+        },*/
     ];
     res.end(JSON.stringify(banques));
 });
